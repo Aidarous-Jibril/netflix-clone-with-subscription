@@ -8,3 +8,6 @@ This web application was created with ReactJS, Context API and Firebase.
 ## Available Scripts
 
 This is a fully monthtly subscription netflix website imitation 
+
+## Visit it on this link
+https://netflix-clone-app-f6fa8.web.app/
