@@ -6,7 +6,7 @@ import Movie from './Movie';
 
 
 
-const imgBaseUrl = "https://image.tmdb.org/t/p/w500/";
+// const imgBaseUrl = "https://image.tmdb.org/t/p/w500/";
 
 const Rows = ({ title, fetchUrl, rowId }) => {
 const [movies, setMovies] = useState([]);

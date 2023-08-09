@@ -41,9 +41,9 @@ const MyFavorMovies = () => {
     }
   return (
     <>
-         <h2 className='text-gray-200 text-3xl text-center font-bold md:text-4xl p-4 mt-28 my-12'> Watch Later Movies</h2>
+         <h2 className='text-gray-200 text-3xl text-center font-bold md:text-4xl p-2 mt-28 lg:mt-8  my-0'> Watch Later Movies</h2>
          
-            <div className='relative flex items-center group p-2 my-20'>
+            <div className='relative flex items-center bg-slate-800 h-24 group p-2 my-10'>
                 <MdChevronLeft
                   onClick={slideLeft}
                     className='bg-white left-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block'
@@ -54,7 +54,7 @@ const MyFavorMovies = () => {
                     className='w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative mx-8 md:mx-12'
                 >
                     {movies?.map((movie, id) => (
-                      <div key={id} className='w-[160px] sm:w-[200px] md:w-[240] lg:w-[280]  inline-block cursor-pointer relative ' >
+                      <div key={id} className='w-[160px] sm:w-[200px] md:w-[240] lg:w-[280]  inline-block cursor-pointer relative mx-2' >
                         <img className='w-full h-auto block' src={`https://image.tmdb.org/t/p/w500/${movie?.img}` } alt="/" />
                         <div className='text-white absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100'>
                             <p className='text-xs md:text-sm font-bold flex justify-center items-center h-full'>{ movie?.name  }</p>

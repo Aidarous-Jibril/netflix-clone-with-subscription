@@ -37,6 +37,7 @@ const PlansScreen = () => {
       }
       fetchProducts()
       }, [])
+      
 
     useEffect(() => {
       const fetchSubscriptiondata = async () => {
@@ -83,9 +84,9 @@ const PlansScreen = () => {
         <div className="fixed w-full px-16 py-20 z-50">
           <div className='bg-black/75 text-white max-w-[400px] h-[400px] mx-auto '>
             
-            <h1 className='text-2xl md:text-3xl text-center text-white p-6 my-12 md:my-6 '>
+            <h1 className='text-xl md:text-3xl  text-white p-4 my-4 mt-24 md:my-6 '>
               <span className='text-center text-sm text-red-600'>Hi {user?.email}</span> <br />
-              Choose Your Subscription
+              Choose Subscription
             </h1>
             {Object.entries(products).map(([productId, productData]) => {
               const isCurrentPackage = productData.name?.toLowerCase().includes(subscription?.role);

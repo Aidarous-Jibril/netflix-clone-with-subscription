@@ -19,15 +19,15 @@ export function AuthContextProvider({ children }) {
     async function signUp  (email, password) {
         await createUserWithEmailAndPassword(auth, email, password);
         await setDoc(doc(db, 'users', email), {
-            savedShows: []
+            savedFavorMovies: []
         })
       }    
-    
+
      async function googleSignIn () {
         const provider =  new GoogleAuthProvider();
        const result = await signInWithPopup(auth, provider)
             setDoc(doc(db, 'users', `${result.user.email}`), {
-               savedShows: []
+               savedFavorMovies: []
            })
     }  
     
@@ -40,13 +40,14 @@ export function AuthContextProvider({ children }) {
 
     // console.log(user?.email)
     useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-        setUser(currentUser);
-    });
-    return () => {
-        unsubscribe();
-        };
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
         });
+
+        return () => {
+            unsubscribe();
+            };
+    });
 
     return (
         <AuthContext.Provider value={{ signUp, logIn, googleSignIn, logOut, user }}>
